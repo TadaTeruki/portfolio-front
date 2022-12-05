@@ -1,13 +1,275 @@
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'M PLUS 1p', sans-serif;
+    background: rgb(247, 247, 247);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+    color: rgb(54, 54, 54);
+    background: rgb(232, 232, 232);
+    font-size: normal;
+    font-weight: normal;
+    padding: 2mm 4mm;
+    border-radius: 1mm;
+    border: 0;
+}
+
+button:hover {
+    background: rgb(197, 197, 197);
+    transition: 0.15s;
+}
+
+.clickable-header {
+    color: rgb(54, 54, 54);
+    display: inline;
+    padding: 2mm;
+    border-bottom: solid 0.3mm rgb(213, 213, 213);
+}
+
+.clickable-header:hover {
+    color: rgb(197, 197, 197);
+    transition: 0.15s;
+}
+
+.button-danger {
+    color: rgb(247, 247, 247);
+    background:rgb(231, 80, 80);
+}
+
+.button-danger:hover {
+    background:rgb(213, 56, 56);
+}
+
+.page-base {
+    background: rgb(255, 255, 255);
+    margin: 5mm 10%;
+    padding: 15mm 5% 15mm 5%;
+    border-radius: 10mm;
+}
+
+.page-base-wide {
+    background: rgb(255, 255, 255);
+    margin: 5mm;
+    border-radius: 5mm;
+}
+
+.page-base, h1, h2, h3 {
+    font-weight: normal;
+    color: rgb(54, 54, 54);
+}
+
+.markdown-base {
+    line-height: 2.0;
+}
+
+.markdown-base p {
+    margin-left: 9mm;
+    line-height: 1.2;
+}
+
+.markdown-base h2 {
+    text-indent: 3mm;
+}
+
+.markdown-base h3 {
+    text-indent: 6mm;
+}
+
+.blog-view-base {
+    line-height: 2.0;
+}
+
+.blog-view-header {
+    margin: 15mm 0mm;
+    padding: 15mm 0mm;
+    line-height: 1.0;
+    border-bottom: solid 0.3mm rgb(213, 213, 213);
+}
+
+.blog-view-footer {
+    margin: 15mm 0mm 0mm 0mm;
+    padding: 15mm 0mm;
+    line-height: 1.0;
+    border-top: solid 0.3mm rgb(213, 213, 213);
+}
+
+.blog-view-title {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.blog-view-code {
+    margin: 0 2%;
+}
+
+.blog-view-provider-mark {
+    font-size: small;
+}
+
+.blog-view-subtitle {
+    font-size: large;
+    font-weight: normal;
+}
+
+.blog-list-title {
+    margin: 0 0 15mm 0;
+}
+
+.blog-list-container {
+    margin: 0mm 15mm;
+}
+
+.blog-list {
+    margin: 8mm 0mm;
+    padding: 1mm 10mm;
+    background: rgb(255, 255, 255);
+    border-bottom: solid 0.6mm rgb(213, 213, 213);
+    color: rgb(0, 0, 0);
+}
+
+.blog-list:hover {
+    border-color: rgb(125, 160, 115);
+    background: rgb(247, 247, 247);
+    transition: 0.15s;
+}
+
+.blog-list-search-result {
+    margin-top: 20mm;
+}
+
+.blog-text-entry {
+    padding: 2mm 2mm;
+    font-size: normal;
+    border: solid 0.5mm rgb(213, 213, 213);
+    border-radius: 2mm;
+    box-sizing: border-box;
+}
+
+.blog-list-text-entry {
+    width: 30%;
+}
+
+.blog-edit-text-entry {
+    width: 100%;
+}
+
+.blog-edit-label {
+    font-size: large;
+}
+
+.blog-edit-base {
+    line-height: 2;
+    display: flex;
+    width: 100%;
+    height: 90vh;
+}
+
+.blog-edit-text-area {
+    width: 100%;
+    display: block;
+    height: 50vh;
+}
+
+.blog-edit-box {
+    width: 50%;
+    min-width: 10%;
+    max-width: 70%;
+    height: 100%;
+    padding: 0 5%;
+    overflow-y: scroll;
+    border: solid 0.5mm rgb(213, 213, 213);
+    border-radius: 2mm;
+    resize: horizontal;
+}
+
+.blog-edit-preview-box {
+    flex-grow: 1;
+    margin: 0;
+    overflow-y: scroll;
+    border-bottom: solid 0.5mm rgb(213, 213, 213);
+    padding: 0 5mm;
+    width: 0;
+}
+
+.blog-edit-button {
+    margin: 5mm 2mm;
+}
+.blog-list-is-private {
+    color: rgb(192, 0, 0);
+}
+
+.blog-list h2 {
+    font-weight: bold;
+}
+
+.tag-list {
+    background: rgb(232, 232, 232);
+    padding: 1mm 2mm;
+    margin: 0mm 2mm 2mm 0mm;
+    border-radius: 2mm;
+    font-size: small;
+    align-items: flex-end;
+}
+
+.tag-list:hover {
+    background: rgb(213, 213, 213);
+    transition: 0.15s;
+}
+
+.tag-list-base {
+    display: flex;
+}
+
+.header-base {
+    width: 100%;
+    background: rgb(247, 247, 247);
+    color: rgb(72, 72, 72);
+    display: flex;
+    border-bottom: solid 0.6mm rgb(213, 213, 213);
+}
+
+.tab-container {
+    font-size: 5mm;
+    display: flex;
+}
+
+.tab {
+    padding: 5mm 7mm;
+    transition: 0.15s;
+}
+
+.tab:hover {
+    background: rgb(236, 236, 236);
+}
+
+.logo {
+    text-align: left;
+    font-size: 7mm;
+    padding: 4mm 7mm;
+}
+
+.logo:hover {
+    background: rgb(236, 236, 236);
+}
+
+.login-box {
+    display: flex;
+    line-height: 2.5;
+    font-size: large;
+}
+
+.error {
+    color: rgb(202, 53, 53);
+    font-size: smaller;
+}
+
+.warning {
+    color: rgb(108, 108, 108);
+    font-size: smaller;
+}
+
+.timestamp {
+    color: rgb(108, 108, 108);
+    font-size: small;
 }

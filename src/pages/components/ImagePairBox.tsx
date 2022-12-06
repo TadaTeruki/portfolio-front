@@ -2,13 +2,9 @@ import React from 'react'
 
 const ImagePairBox = (props: { image: string; children: React.ReactNode }) => {
     return (
-        <div style={{ display: 'flex' }}>
-            <div>{props.children}</div>
-            <img
-                src={props.image}
-                style={{ marginLeft: 'auto' }}
-                alt="perukun"
-            />
+        <div className="image-pair-box">
+            <div className="image-pair-box-text">{props.children}</div>
+            <img src={props.image} alt="perukun" />
         </div>
     )
 }

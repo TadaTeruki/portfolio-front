@@ -9,7 +9,7 @@ const Header = () => {
         <div className="header-base">
             <div className="tab-container">
                 <div onClick={() => navigate('/')}>
-                    <Logo>Peruki's portfolio</Logo>
+                    <Logo>Peruki's Portfolio</Logo>
                 </div>
                 <div onClick={() => navigate('/profile')}>
                     <Tab>Profile</Tab>

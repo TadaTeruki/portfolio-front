@@ -1,7 +1,7 @@
 
 body {
     margin: 0;
-    font-family: 'M PLUS 1p', sans-serif;
+    font-family: 'M PLUS 1', sans-serif;
     background: rgb(247, 247, 247);
 }
 
@@ -18,6 +18,10 @@ button {
 button:hover {
     background: rgb(197, 197, 197);
     transition: 0.15s;
+}
+
+img {
+    max-width: 100%;
 }
 
 .clickable-header {
@@ -43,9 +47,16 @@ button:hover {
 
 .page-base {
     background: rgb(255, 255, 255);
-    margin: 5mm 10%;
-    padding: 15mm 5% 15mm 5%;
+    margin: 5vh 10vw;
+    padding: 15mm 5vw;
     border-radius: 10mm;
+}
+
+@media screen and (max-width: 600px) {
+    .page-base {
+        margin: 1vh 1vh;
+        padding: 5mm 6vw;
+    }
 }
 
 .page-base-wide {
@@ -55,8 +66,12 @@ button:hover {
 }
 
 .page-base, h1, h2, h3 {
+    color: rgb(57, 57, 57);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.page-base h3 {
     font-weight: normal;
-    color: rgb(54, 54, 54);
 }
 
 .markdown-base {
@@ -64,16 +79,8 @@ button:hover {
 }
 
 .markdown-base p {
-    margin-left: 9mm;
+    margin-left: 5mm;
     line-height: 1.2;
-}
-
-.markdown-base h2 {
-    text-indent: 3mm;
-}
-
-.markdown-base h3 {
-    text-indent: 6mm;
 }
 
 .blog-view-base {
@@ -81,8 +88,8 @@ button:hover {
 }
 
 .blog-view-header {
-    margin: 15mm 0mm;
-    padding: 15mm 0mm;
+    margin-bottom: 5vh;
+    padding: 5vh 0;
     line-height: 1.0;
     border-bottom: solid 0.3mm rgb(213, 213, 213);
 }
@@ -117,15 +124,27 @@ button:hover {
 }
 
 .blog-list-container {
-    margin: 0mm 15mm;
+    margin: 0 5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .blog-list-container {
+        margin: 0;
+    }
 }
 
 .blog-list {
-    margin: 8mm 0mm;
+    margin: 1vh 0;
     padding: 1mm 10mm;
     background: rgb(255, 255, 255);
     border-bottom: solid 0.6mm rgb(213, 213, 213);
     color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 600px) {
+    .blog-list {
+        margin: 1vh 0;
+    }
 }
 
 .blog-list:hover {
@@ -147,7 +166,8 @@ button:hover {
 }
 
 .blog-list-text-entry {
-    width: 30%;
+    margin-right: 50%;
+    min-width: 40%;
 }
 
 .blog-edit-text-entry {
@@ -199,7 +219,7 @@ button:hover {
     color: rgb(192, 0, 0);
 }
 
-.blog-list h2 {
+.blog-list h3 {
     font-weight: bold;
 }
 
@@ -247,10 +267,18 @@ button:hover {
     text-align: left;
     font-size: 7mm;
     padding: 4mm 7mm;
+    flex-wrap: nowrap;
 }
 
 .logo:hover {
     background: rgb(236, 236, 236);
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        font-size: 4vw;
+        padding: auto;
+    }
 }
 
 .login-box {
@@ -272,4 +300,13 @@ button:hover {
 .timestamp {
     color: rgb(108, 108, 108);
     font-size: small;
+}
+
+.image-pair-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-pair-box-text {
+    margin-right: auto;
 }

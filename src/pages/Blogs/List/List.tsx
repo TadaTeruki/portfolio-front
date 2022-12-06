@@ -31,7 +31,7 @@ const List = (props: {
                         </span>
                     </div>
                 )}
-                <h2>{props.articles[i].title}</h2>
+                <h3>{props.articles[i].title}</h3>
                 <p>{props.articles[i].subtitle}</p>
                 <BlogTimestamp
                     raw={props.articles[i].created_at}
@@ -83,14 +83,14 @@ const List = (props: {
     if (props.keywords.length === 1 && props.keywords[0] === '') {
         return (
             <>
-                <h2>新しい順</h2>
+                <h3>新しい順</h3>
                 {top_items}
             </>
         )
     } else {
         return (
             <>
-                <h2>検索結果</h2>
+                <h3>検索結果</h3>
 
                 {top_items.length === 0 ? (
                     <p className="warning">記事が見つかりませんでした。</p>
@@ -98,9 +98,9 @@ const List = (props: {
                     <>{top_items}</>
                 )}
 
-                <h2 className="blog-list-search-result">
+                <h3 className="blog-list-search-result">
                     その他の記事 (新しい順)
-                </h2>
+                </h3>
 
                 {other_items.length === 0 ? (
                     <p className="warning">

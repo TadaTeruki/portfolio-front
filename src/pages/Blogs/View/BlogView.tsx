@@ -7,8 +7,11 @@ import RequestCheckAuth from 'requests/Auth/CheckAuth'
 import RequestReadArticle from 'requests/Article/ReadArticle'
 import RequestDeleteArticle from 'requests/Article/DeleteArticle'
 import BlogTimestamp from 'pages/components/Timestamp'
+import SetDocumentTitle from 'packages/DocumentTitle/SetDocumentTitle'
 
 const BlogView = () => {
+    SetDocumentTitle('')
+
     const { id } = useParams()
     const id_str = id ? id : ''
 
@@ -33,6 +36,7 @@ const BlogView = () => {
             { id: id_str },
             (res) => {
                 setArticle(res)
+                SetDocumentTitle(res.title)
             },
             (message) => {
                 setErr(message)
@@ -57,14 +61,6 @@ const BlogView = () => {
         <>
             <Header />
             <div className="page-base blog-view-base">
-                <button
-                    onClick={() => {
-                        navigate('/blog')
-                    }}
-                >
-                    リストに戻る
-                </button>
-                &emsp;
                 {stateAuth ? (
                     <>
                         <button
@@ -122,7 +118,7 @@ const BlogView = () => {
                 )}
                 <div className="error">{stateErr}</div>
                 <div className="blog-view-footer">
-                    <h2>Peruki's portfolio</h2>
+                    <h2>Peruki's Portfolio</h2>
                     <p>記事作成者: 多田 瑛貴 Teruki TADA</p>
                     {stateArticle == null ? (
                         <></>

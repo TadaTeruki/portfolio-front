@@ -7,8 +7,11 @@ import RequestCheckAuth from 'requests/Auth/CheckAuth'
 import RequestListArticles from 'requests/Articles/ListArticles'
 import RequestPostArticle from 'requests/Article/PostArticle'
 import QueryToken from 'packages/Token/Token'
+import SetDocumentTitle from 'packages/DocumentTitle/SetDocumentTitle'
 
 const BlogList = () => {
+    SetDocumentTitle('Blog')
+
     const searcher = useLocation().search
     const search_keyword = new URLSearchParams(searcher).get('search')
 
@@ -77,12 +80,12 @@ const BlogList = () => {
             <Header />
             <div className="page-base">
                 <div className="blog-list-title">
-                    <h1>Blog</h1>
+                    <h2>Blog</h2>
                     <h3>技術や生活に関する記事を載せています</h3>
                 </div>
 
                 <div className="blog-list-container">
-                    <h2>検索</h2>
+                    <h3>検索</h3>
                     <input
                         type="text"
                         className="blog-text-entry blog-list-text-entry"
@@ -105,11 +108,15 @@ const BlogList = () => {
                         <></>
                     )}
 
-                    <List
-                        articles={stateResponses}
-                        keywords={stateSearch.split(' ')}
-                        onPushTag={onPushTag}
-                    />
+                    {stateResponses.length > 0 ? (
+                        <List
+                            articles={stateResponses}
+                            keywords={stateSearch.split(' ')}
+                            onPushTag={onPushTag}
+                        />
+                    ) : (
+                        <>記事取得中...</>
+                    )}
                 </div>
 
                 <div className="error">{stateErr}</div>
